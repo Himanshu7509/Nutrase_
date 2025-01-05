@@ -1,0 +1,141 @@
+.about-main-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.main-about-cont-part{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.main-about-title{
+    font-size: 30px;
+    margin-top: 20px;
+    color: darkslateblue;
+    font-weight: 400;
+}
+
+.main-about-heading{
+    font-size: 33px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.main-about-content-part{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(1px 1px 20px rgba(0, 0, 0, 0.504));
+}
+
+.main-about-marquee-part{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+}
+
+.main-about-marquee-block{
+    width: 350px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.main-about-icon-text-part{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main-about-icon{
+    font-size: 50px;
+    color: black;
+    margin-right: 10px;
+}
+
+.main-about-text-title-part{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.main-about-text{
+    font-size: 18px;
+}
+
+.main-about-text-italic{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.main-about-text-details{
+    font-size: 16px;
+    text-align: left;
+    margin-top: 15px;
+}
+
+@media (max-width: 475px){
+    .main-about-cont-part{
+        width: 90%;
+    }
+
+    .main-about-marquee-block{
+        width: 220px;
+    }
+
+    .main-about-icon{
+        font-size: 40px;
+    }
+
+    .main-about-text{
+        font-size: 16px;
+    }
+
+    .main-about-text-details{
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 2000px){
+    .main-about-title{
+        font-size: 60px;
+    }
+
+    .main-about-heading{
+        font-size: 63px;
+    }
+    
+    .main-about-marquee-block{
+        width: 500px;
+    }
+
+    .main-about-icon{
+        font-size: 70px;
+    }
+
+    .main-about-text{
+        font-size: 28px;
+    }
+
+    .main-about-text-details{
+        font-size: 26px;
+    }
+
+}

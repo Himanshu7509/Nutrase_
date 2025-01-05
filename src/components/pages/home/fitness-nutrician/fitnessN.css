@@ -1,0 +1,127 @@
+.main-cont-fitness {
+    width: 100%;
+    justify-content: center;
+    background: url("../../../../assets//home-diet-food.jpg");
+    background-size: cover;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .heading-part {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .st-para {
+    color: rgb(6, 70, 6);
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .heading-part h1 {
+    font-size: 40px;
+    text-align: center;
+    
+  }
+  .heading-part h1 span {
+    color: chocolate;
+    font-size: 45px;
+  }
+  
+  .last-para-head {
+    font-size: 24px;
+    font-weight: 100;
+    font-weight: 300;
+    color: rgb(29, 34, 36);
+    text-align: center;
+  }
+  
+  .btn-grad {
+    background-image: linear-gradient(
+      to right,
+      #aa9f9b 0%,
+      #4c5b9f 51%,
+      #e8cbc0 100%
+    );
+  }
+  .btn-grad {
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    border: none;
+  }
+  
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  @media (min-width: 1024px) {
+    .heading-part {
+      width: 50%;
+      height: 100vh;
+      justify-content: center;
+      align-items: flex-start;
+      position: relative;
+      left: 6%;
+    }
+    .st-para {
+      color: rgb(6, 70, 6);
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .heading-part h1 {
+      font-size: 50px;
+      text-align: start;
+      
+    }
+    .heading-part h1 span {
+      color: chocolate;
+      font-size: 50px;
+      text-align: start;
+    }
+    .last-para-head {
+      font-size: 24px;
+      font-weight: 100;
+      color: rgb(29, 34, 36);
+      text-align: start;
+      font-weight: 300;
+    }
+  }
+
+  @media (min-width: 2000px){
+    .heading-part h1 {
+      font-size: 80px;
+      
+    }
+    .heading-part h1 span {
+      font-size: 85px;
+    }
+
+    .st-para {
+
+      font-size: 30px;
+    }
+
+    .last-para-head {
+      font-size: 32px;
+    }
+    .btn-grad{
+      font-size: 32px;
+    }
+    
+  }

@@ -1,0 +1,142 @@
+.main-food-fitness-cont {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  .about-food-fitness {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #d8d8d820;
+  }
+
+  .food-blog-heading{
+    margin-top: 30px;
+    font-size: 28px;
+    font-weight: 600;
+    color: darkslategray;
+  }
+  
+  .food-fitness-card{
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+     
+  }
+  
+  .ask-ai-fitness {
+    width: 315px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    
+  }
+  .ask-ai-fitness:hover {
+    transition-duration: 0.6s;
+    border-top-left-radius: 20px;
+    box-shadow: 1px 2px 4px rgb(116, 116, 116);
+  }
+  
+  .ai-fitness-img{
+      width: 100%;
+      margin-bottom: 5px;
+      border-radius: 14px;
+  }
+  
+  .ai-fitness-text{
+      font-size: 20px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
+  
+
+  @media (min-width: 600px) {
+    .main-food-fitness-cont {
+      width: 100%;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      
+    }
+  
+    .about-food-fitness {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 10px;
+      background: #d8d8d820;
+    }
+  
+    .ask-ai-fitness {
+      width: 350px;
+    }
+ 
+  }
+  
+  @media (max-width: 768px){
+    .ask-ai-fitness {
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .main-food-fitness-cont {
+      width: 100%;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .heading-food-fiitness {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      
+      font-size: 30px;
+      font-weight: 300;
+    }
+  
+    .ask-ai-fitness {
+      width: 380px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .food-blog-heading{
+      margin-top: 30px;
+      font-size: 38px;
+      font-weight: 600;
+      color: darkslategray;
+    }
+  
+    
+  }
+
+  @media (min-width: 2000px){
+    .ask-ai-fitness {
+      width: 500px;
+    }
+
+    .food-blog-heading {
+  
+      font-size: 60px;
+
+    }
+    .ai-fitness-text{
+      font-size: 35px;
+  }
+  }

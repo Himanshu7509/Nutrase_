@@ -1,0 +1,119 @@
+.Notfound-main-content {
+  width: 100%;
+  height: 100vh;
+}
+
+.notfound-content {
+  width: 100%;
+  height: 100vh;
+}
+
+.notfound-first-content {
+  width: 100%;
+  height: 50%;
+  /* border: 1px solid black; */
+}
+
+.notfound-second-content {
+  width: 100%;
+  height: 50%;
+  /* border: 1px solid black; */
+}
+
+.notfound-img img {
+  width: 100%;
+}
+
+.notfound-heading-para-btn {
+  text-align: center;
+}
+
+.notfound-heading-para-btn button {
+  width: 40%;
+  height: 20%;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  background-color: rgb(55, 146, 231);
+  color: white;
+  font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+  .Notfound-main-content {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .notfound-content {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .notfound-first-content {
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid black; */
+  }
+
+  .notfound-second-content {
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .notfound-heading-para-btn {
+    text-align: start;
+    /* border: 1px solid black; */
+
+    width: 470px;
+
+    height: 550px;
+
+    position: relative;
+    top: 70px;
+  }
+
+  .notfound-heading-para-btn h1 {
+    font-size: 70px;
+
+    font-weight: 700;
+  }
+
+  .notfound-heading-para-btn p {
+    font-size: 25px;
+  }
+
+  .notfound-heading-para-btn button {
+    width: 40%;
+    height: 10%;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(55, 146, 231);
+    color: white;
+    font-weight: 600;
+  }
+
+  .notfound-img {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .notfound-img img {
+    width: 70%;
+
+    position: relative;
+    top: 30px;
+  }
+}
