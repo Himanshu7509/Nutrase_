@@ -20,12 +20,17 @@ const ApiFetch = () => {
   const [work, setWork] = useState("");
   const [targetWeight, setTargetWeight] = useState("");
   const [days, setDays] = useState("");
+
+  const [vegetarian, setvegetarian] = useState("");
+  const [eat, seteat] = useState("");
+  const [budget, setBudget] = useState("");
   const [result, setResult] = useState([]);
   const [loading, setLoading] = useState(false);
   const [inputsVisible, setInputsVisible] = useState(true);
   const [currentSection, setCurrentSection] = useState(0);
   const [questionsLog, setQuestionsLog] = useState([]);
   const [showQuestions, setShowQuestions] = useState(false);
+  const [shakeFields, setShakeFields] = useState([]);
 
   // save the quition in days vise just like today yesterday and last 7 days only
   useEffect(() => {
@@ -76,14 +81,39 @@ const ApiFetch = () => {
 
   // that can be use nextfunction the click the buttion user show next input
   const handleNext = () => {
-    if (currentSection === 0 && (!name || !gender || !age)) {
-      alert("Please fill all fields in this section.");
-      return;
+    const emptyFields = [];
+    if (currentSection === 0) {
+      if (!name) emptyFields.push("name");
+
+      if (!age) emptyFields.push("age");
+
+      if (!gender) emptyFields.push("gender");
+
+      if (emptyFields.length > 0) {
+        setShakeFields(emptyFields);
+        setTimeout(() => setShakeFields([]), 1000);
+        return;
+      }
     }
-    if (currentSection === 1 && (!weight || !height || !work)) {
-      alert("Please fill all fields in this section.");
-      return;
+    if (currentSection === 1) {
+      // && (!weight || !height || !work )
+
+      if (!weight) emptyFields.push("weight");
+
+      if (!height) emptyFields.push("height");
+
+      if (!work) emptyFields.push("work");
+
+      if (emptyFields.length > 0) {
+        setShakeFields(emptyFields);
+        setTimeout(() => setShakeFields([]), 1000);
+        return;
+      }
     }
+    // if( currentSection ===2 &&(!eat || !vegetarian || !budget)){
+    //   alert('Please fill all fields in this section.');
+    //   return;
+    // }
     setCurrentSection((prev) => prev + 1);
   };
 
@@ -93,6 +123,8 @@ const ApiFetch = () => {
   };
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
+    const emptyFieldsAll = [];
     if (
       !name ||
       !gender ||
@@ -101,13 +133,27 @@ const ApiFetch = () => {
       !height ||
       !work ||
       !targetWeight ||
-      !days
+      !days ||
+      !eat ||
+      !budget ||
+      !vegetarian
     ) {
-      alert("Please fill all the boxes.");
-      return;
+      if (!targetWeight) emptyFieldsAll.push("targetWeight");
+
+      if (!days) emptyFieldsAll.push("days");
+
+      if (!eat) emptyFieldsAll.push("eat");
+      if (!budget) emptyFieldsAll.push("budget");
+      if (!vegetarian) emptyFieldsAll.push("vegetarian");
+
+      if (emptyFieldsAll.length > 0) {
+        setShakeFields(emptyFieldsAll);
+        setTimeout(() => setShakeFields([]), 1000);
+
+        return;
+      }
     }
 
-    e.preventDefault();
     setLoading(true);
     setResult([]);
     setInputsVisible(false);
@@ -121,10 +167,13 @@ const ApiFetch = () => {
       work,
       targetWeight,
       days,
+      vegetarian,
+      budget,
+      eat,
       timestamp: new Date().toISOString(),
     };
 
-    // save the quition in localstorage
+    // save the quition in localstorage for 1weeek
     const savedLogs = JSON.parse(localStorage.getItem("questionsLog")) || [];
     savedLogs.push(log);
     localStorage.setItem("questionsLog", JSON.stringify(savedLogs));
@@ -138,14 +187,19 @@ const ApiFetch = () => {
           contents: [
             {
               parts: [
-                { text: `name: ${name}` },
-                { text: `current Age: ${age}` },
-                { text: `Gender: ${gender}` },
-                { text: `Weight in kg: ${weight}` },
-                { text: `current height in Fit: ${height}` },
-                { text: `working professional: ${work}` },
-                { text: `Target Weight: ${targetWeight}` },
-                { text: `target Days: ${days}` },
+                { text: `i am ${name}.` },
+                { text: `my current age is ${age}.` },
+                { text: `I m ${gender}.` },
+                { text: `my current weight is  ${weight} kg.` },
+                { text: ` my current height  is  ${height} fit.` },
+                { text: `current   : ${work} is.` },
+                { text: `my target weight is ${targetWeight} kg. ` },
+                { text: ` Im a  ${vegetarian}  ` },
+                { text: `daily food consompsion  ${eat} in a day ` },
+                {
+                  text: ` this is my ${budget}} in rupeess provied only this budget food and activity  in monthly budget`,
+                },
+                { text: ` in  ${days} days.` },
               ],
             },
           ],
@@ -176,6 +230,9 @@ const ApiFetch = () => {
     setHeight("");
     setName("");
     setWork("");
+    setBudget("");
+    seteat("");
+    setvegetarian("");
     setResult([]);
     setInputsVisible(true);
     setCurrentSection(0);
@@ -190,6 +247,7 @@ const ApiFetch = () => {
 
   return (
     <>
+ 
       <div className="main-api-div">
         {inputsVisible ? (
           <div className="many-input-field">
@@ -203,15 +261,27 @@ const ApiFetch = () => {
                         type="button"
                         className={`gender-btn ${
                           gender === "male" ? "selected" : ""
+                        }${
+                          shakeFields.includes("gender")
+                            ? "shake red-outline"
+                            : ""
                         }`}
                         onClick={() => setGender("male")}
                       >
-                        <img src={man} alt="Male" />
+                        <img
+                          src={man}
+                          alt="Male"
+                          className="btn-gender-catagiroes"
+                        />
                       </button>
                       <button
                         type="button"
                         className={`gender-btn ${
                           gender === "female" ? "selected" : ""
+                        } ${
+                          shakeFields.includes("name")
+                            ? "shake red-outline"
+                            : ""
                         }`}
                         onClick={() => setGender("female")}
                       >
@@ -225,6 +295,9 @@ const ApiFetch = () => {
                   </div>
                   <div className="fitness">
                     <input
+                      className={
+                        shakeFields.includes("name") ? "shake red-outline" : ""
+                      }
                       type="text"
                       placeholder="Your name..."
                       value={name}
@@ -233,6 +306,9 @@ const ApiFetch = () => {
                   </div>
                   <div className="fitness">
                     <input
+                      className={
+                        shakeFields.includes("age") ? "shake red-outline" : ""
+                      }
                       type="number"
                       placeholder="Enter age..."
                       value={age}
@@ -251,7 +327,12 @@ const ApiFetch = () => {
                 <>
                   <div className="fitness">
                     <input
-                      type="text"
+                      className={
+                        shakeFields.includes("weight")
+                          ? "shake red-outline"
+                          : ""
+                      }
+                      type="number"
                       placeholder="Weight..."
                       value={weight}
                       onChange={(e) => setWeight(e.target.value)}
@@ -259,6 +340,11 @@ const ApiFetch = () => {
                   </div>
                   <div className="fitness">
                     <input
+                      className={
+                        shakeFields.includes("height")
+                          ? "shake red-outline"
+                          : ""
+                      }
                       type="number"
                       placeholder="Current height in ft..."
                       value={height}
@@ -267,6 +353,9 @@ const ApiFetch = () => {
                   </div>
                   <div className="fitness">
                     <input
+                      className={
+                        shakeFields.includes("work") ? "shake red-outline" : ""
+                      }
                       type="text"
                       placeholder="Working professional..."
                       value={work}
@@ -294,14 +383,63 @@ const ApiFetch = () => {
                 <>
                   <div className="fitness">
                     <input
+                      className={
+                        shakeFields.includes("targetWeight")
+                          ? "shake red-outline"
+                          : ""
+                      }
                       type="text"
                       placeholder="Target Weight..."
                       value={targetWeight}
                       onChange={(e) => setTargetWeight(e.target.value)}
                     />
                   </div>
+
                   <div className="fitness">
                     <input
+                      className={
+                        shakeFields.includes("vegetarian")
+                          ? "shake red-outline"
+                          : ""
+                      }
+                      type="text"
+                      placeholder="vegetararian/nonveg..."
+                      value={vegetarian}
+                      onChange={(e) => setvegetarian(e.target.value)}
+                    />
+                  </div>
+
+                  <div className="fitness">
+                    <input
+                      className={
+                        shakeFields.includes("eat") ? "shake red-outline" : ""
+                      }
+                      type="text"
+                      placeholder="daily food consumption..."
+                      value={eat}
+                      onChange={(e) => seteat(e.target.value)}
+                    />
+                  </div>
+
+                  <div className="fitness">
+                    <input
+                      className={
+                        shakeFields.includes("budget")
+                          ? "shake red-outline"
+                          : ""
+                      }
+                      type="text"
+                      placeholder="your budget..."
+                      value={budget}
+                      onChange={(e) => setBudget(e.target.value)}
+                    />
+                  </div>
+
+                  <div className="fitness">
+                    <input
+                      className={
+                        shakeFields.includes("days") ? "shake red-outline" : ""
+                      }
                       type="number"
                       placeholder="Target Days"
                       value={days}
@@ -326,19 +464,20 @@ const ApiFetch = () => {
           </div>
         ) : (
           <div className="main-result">
-            <div className="result-display">
-              {loading ? (
-                <img src={loadingImg} alt="Loading..." />
-              ) : (
-                <ul className="result-list">
-                  {result.map((item, index) => (
-                    <li key={index} className="result-item">
-                      <Markdown>{item}</Markdown>
+            {loading ? (
+              <img src={loadingImg} alt="Loading..." className="loding-img" />
+            ) : (
+              <ul className="ans-container">
+                {result.map((item, index) => (
+                  <>
+                    <li key={index}>
+                      <Markdown className="markup-text">{item}</Markdown>
                     </li>
-                  ))}
-                </ul>
-              )}
-            </div>
+                  </>
+                ))}
+              </ul>
+            )}
+
             <button className="btn-grad1" onClick={handleReset}>
               <img src={refress} />
             </button>

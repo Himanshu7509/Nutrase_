@@ -82,6 +82,7 @@ const Register = () => {
                   >
                     Go Back
                   </button>
+                  <br/>
                 </div>
               </div>
             </form>
