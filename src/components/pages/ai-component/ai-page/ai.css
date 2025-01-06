@@ -57,18 +57,27 @@
   justify-content: center;
 }
 
+
+
 .many-input-field {
   width: 60%;
   max-width: 470px;
   height: auto;
   display: flex;
   flex-direction: column;
-
   background-color: #ffffff;
-  padding: 20px;
+  padding: 26px;
   border: 1px solid lightgrey;
   border-radius: 15px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.ask-label{
+  font-size: 17px;
+  margin-top: 5px;
+  font-weight: 500;
 }
 
 .many-input-field form {
@@ -81,11 +90,12 @@
 .fitness input,
 .fitness select {
   width: 100%;
-  height: 54px;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 17px;
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 16px;
+  margin-bottom: 10px;
+  outline: none;
 }
 
 .next-btn {
@@ -125,11 +135,10 @@
 
 .btn-grad1 {
   position: absolute;
-  top: 16%;
+  top: 5%;
   left: 6%;
   border: none;
   background-color: transparent;
-
   height: 38px;
 }
 .btn-grad1 img {
@@ -404,10 +413,10 @@
 
   .save-quition {
     position: absolute;
-    top: 9%;
+    top: 15%;
     width: 13%;
     font-size: 20px;
-  }
+}
 
   .save-function {
     width: 70vw;
@@ -421,13 +430,12 @@
 
   .btn-grad1 {
     position: absolute;
-    top: 9%;
+    top: 2%;
     left: 13%;
     border: none;
     background-color: transparent;
-
     height: 38px;
-  }
+}
 
   .ans-container {
     width: 85%;
@@ -499,9 +507,9 @@
     z-index: 1;
     font-size: 20px;
     position: absolute;
-    top: 9%;
+    top: 13%;
     transition-duration: 0.7s;
-  }
+}
   .save-function {
     width: 80vw;
     border-radius: 15px;
@@ -514,9 +522,9 @@
   .btn-grad1 {
     background-color: #ffffff;
     height: 2rem;
-    left: 20%;
-    top: 9%;
-  }
+    left: 28%;
+    top: 0%;
+}
 
   .ans-container {
     width: 90%;

@@ -247,11 +247,10 @@ const ApiFetch = () => {
 
   return (
     <>
- 
       <div className="main-api-div">
         {inputsVisible ? (
           <div className="many-input-field">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="ai-fill-form">
               <div className="heding-of-ai"></div>
               {currentSection === 0 ? (
                 <>
@@ -294,6 +293,7 @@ const ApiFetch = () => {
                     </div>
                   </div>
                   <div className="fitness">
+                    <label className="ask-label">Enter Name:</label>
                     <input
                       className={
                         shakeFields.includes("name") ? "shake red-outline" : ""
@@ -304,7 +304,9 @@ const ApiFetch = () => {
                       onChange={(e) => setName(e.target.value)}
                     />
                   </div>
+
                   <div className="fitness">
+                    <label className="ask-label">Enter Age:</label>
                     <input
                       className={
                         shakeFields.includes("age") ? "shake red-outline" : ""
@@ -326,6 +328,7 @@ const ApiFetch = () => {
               ) : currentSection === 1 ? (
                 <>
                   <div className="fitness">
+                    <label className="ask-label">Enter Weight:</label>
                     <input
                       className={
                         shakeFields.includes("weight")
@@ -333,12 +336,13 @@ const ApiFetch = () => {
                           : ""
                       }
                       type="number"
-                      placeholder="Weight..."
+                      placeholder="Enter weight in (kg)"
                       value={weight}
                       onChange={(e) => setWeight(e.target.value)}
                     />
                   </div>
                   <div className="fitness">
+                    <label className="ask-label">Enter Height:</label>
                     <input
                       className={
                         shakeFields.includes("height")
@@ -352,6 +356,7 @@ const ApiFetch = () => {
                     />
                   </div>
                   <div className="fitness">
+                    <label className="ask-label">Enter Profession:</label>
                     <input
                       className={
                         shakeFields.includes("work") ? "shake red-outline" : ""
@@ -379,9 +384,10 @@ const ApiFetch = () => {
                     </button>
                   </div>
                 </>
-              ) : (
+              ) : currentSection === 2 ? (
                 <>
                   <div className="fitness">
+                    <label className="ask-label">Target Weight:</label>
                     <input
                       className={
                         shakeFields.includes("targetWeight")
@@ -396,32 +402,63 @@ const ApiFetch = () => {
                   </div>
 
                   <div className="fitness">
-                    <input
+                    <label className="ask-label">Are you veg or non-veg:</label>
+                    <select
                       className={
                         shakeFields.includes("vegetarian")
                           ? "shake red-outline"
                           : ""
                       }
-                      type="text"
-                      placeholder="vegetararian/nonveg..."
                       value={vegetarian}
                       onChange={(e) => setvegetarian(e.target.value)}
-                    />
+                    >
+                      <option value="veg/non" selected ></option>
+                      <option value="veg">Veg</option>
+                      <option value="nonveg">Non-Veg</option>
+                    </select>
                   </div>
 
                   <div className="fitness">
-                    <input
+                    <label className="ask-label">Daily Food Consumption:</label>
+                    <select
                       className={
                         shakeFields.includes("eat") ? "shake red-outline" : ""
                       }
-                      type="text"
-                      placeholder="daily food consumption..."
                       value={eat}
                       onChange={(e) => seteat(e.target.value)}
-                    />
+                    >
+                      <option value="0" selected></option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                    </select>
+                    
                   </div>
 
+                  <div className="btn-next-previous">
+                    <button
+                      type="button"
+                      onClick={handlePrevious}
+                      className="previous-btn"
+                    >
+                      Previous
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleNext}
+                      className="next-btn"
+                    >
+                      Next
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <>
                   <div className="fitness">
+                    <label className="ask-label">Enter your Budget:</label>
                     <input
                       className={
                         shakeFields.includes("budget")
@@ -436,6 +473,7 @@ const ApiFetch = () => {
                   </div>
 
                   <div className="fitness">
+                    <label className="ask-label">Enter Days :</label>
                     <input
                       className={
                         shakeFields.includes("days") ? "shake red-outline" : ""

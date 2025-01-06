@@ -12,6 +12,8 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 .contact-left-cont{
@@ -173,10 +175,14 @@
 
 @media (max-width: 450px){
     .contact-content-cont{
-        width: 90%;
+        width: 95%;
     }
     .contact-left-cont-heading{
         font-size: 28px;
+    }
+
+    .contact-us-right-part{
+        padding: 5px;
     }
 
     .mail-icon{
@@ -190,5 +196,55 @@
 
     .mail-text-part{
         font-size: 13px;
+    }
+}
+
+@media (min-width: 2000px){
+    .contact-left-cont{
+        width: 40%;
+    }
+
+    .contact-right-cont{
+        width: 50%;
+    }
+
+    .contact-left-cont-title{
+        font-size: 28px;
+    }
+
+    .contact-left-cont-heading{
+        font-size: 46px;
+    }
+
+    .contact-left-cont-small-head{
+        font-size: 27px;
+    }
+
+    .contact-label{
+        font-size: 25px;
+    }
+
+    .contact-input{
+        font-size: 24px;
+    }
+
+    .contact-submit-button{
+        font-size: 28px;
+    }
+
+    .contact-right-image{
+        height: 500px;
+    }
+
+    .mail-text{
+        font-size: 30px;
+    }
+
+    .mail-text-part{
+        font-size: 26px;
+    }
+
+    .mail-icon{
+        font-size: 100px;
     }
 }

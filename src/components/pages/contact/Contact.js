@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <>
      <Header/>
-     <div>
+     <div className='container-fluid'>
         <ContactUs/>
      </div>
      <Footer/>

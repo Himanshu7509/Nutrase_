@@ -18,7 +18,7 @@ function Home() {
       <div className="container-fluid">
         <MainCourse/>
       </div>
-      <div>
+      <div className='container-fluid slider-commson'>
         <Expert/>
       </div>
       <div>

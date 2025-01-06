@@ -47,13 +47,40 @@
     text-align: center;
 }
 
+.course-card-btn{
+    border: none;
+    font-size: 18px;
+    background-color: transparent;
+}
+
+.course-card-btn:hover{
+    font-weight: 600;
+    text-decoration: underline;
+}
+
 @media (max-width: 1025px) {
     .main-course-cards{
         width: 280px;
     }
 }
 
-@media (max-width: 765px) {
+@media (min-width: 1026px) {
+    .main-course-cards{
+        width: 30%;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-course-card-cont{
+        width: 100%;
+    }
+    .main-course-cards{
+        width: 250px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
     .main-course-cards{
         width: 100%;
     }

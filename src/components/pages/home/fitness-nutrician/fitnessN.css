@@ -9,7 +9,6 @@
   
   .heading-part {
     width: 100%;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,7 +72,7 @@
   @media (min-width: 1024px) {
     .heading-part {
       width: 50%;
-      height: 100vh;
+      height: 95vh;
       justify-content: center;
       align-items: flex-start;
       position: relative;
