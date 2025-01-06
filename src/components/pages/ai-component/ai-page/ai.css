@@ -414,6 +414,7 @@
     max-height: 78vh;
     display: flex;
     font-size: 18px;
+    background-color: white;
 
     /* box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.324); */
   }
@@ -505,6 +506,7 @@
     width: 80vw;
     border-radius: 15px;
     background-color: transparent;
+    background-color: white;
   }
   .save-function h5 {
     font-size: 19px;
@@ -519,4 +521,10 @@
   .ans-container {
     width: 90%;
   }
+}
+
+@media (min-width:1500px){
+
+
+    
 }
