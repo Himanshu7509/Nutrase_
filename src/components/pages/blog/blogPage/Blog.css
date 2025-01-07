@@ -354,3 +354,31 @@
     color: black;
   }
 }
+
+@media (min-width: 2000px){
+  .blog-content{
+    width: 170% ;
+  }
+
+  .h1-para-img-cont img {
+    width: 501px;
+    height: 450px;
+}
+.h1-element h1 {
+  font-size: 47px;
+}
+
+.h1-element p {
+  font-size: 25px;
+}
+
+.blog-grid-cont h4 {
+  font-size: 27px;
+  color: black;
+}
+
+.blog-grid-cont p {
+  font-size: 20px;
+  color: black;
+}
+}
